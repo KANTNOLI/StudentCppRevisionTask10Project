@@ -25,5 +25,18 @@
 */
 
 int task01(long long number) {
-	return 0;
+	number = number > 0 ? number : -number;
+	int maxValue = 0;
+
+	while (number > 0) {
+		short digit = number % 10;
+		if (digit > maxValue)
+		{
+			maxValue = digit;
+		}
+
+		number /= 10;
+	}
+
+	return maxValue;
 }
