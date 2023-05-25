@@ -28,5 +28,21 @@
 */
 
 int task02(long long number) {
+	number = number > 0 ? number : -number;
+
+	int max_value = 0;
+
+	while (number > 9) {
+		int first_digit = number % 10;
+		number /= 10;
+		int second_digit = number % 10;
+		if (first_digit < second_digit) {
+			max_value = second_digit;
+		}
+
+	}
+
+
+
 	return 0;
 }
