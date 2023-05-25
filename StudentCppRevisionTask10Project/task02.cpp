@@ -28,21 +28,24 @@
 */
 
 int task02(long long number) {
-	number = number > 0 ? number : -number;
+	//cout << number;
+		number = number > 0 ? number : -number;
+	int minValue = 10;
+	int count = 1;
+	while (number > 0) {
+		int digit = number % 10;
 
-	int max_value = 0;
-
-	while (number > 9) {
-		int first_digit = number % 10;
-		number /= 10;
-		int second_digit = number % 10;
-		if (first_digit < second_digit) {
-			max_value = second_digit;
+		if (digit < minValue) {
+			minValue = digit;
+			count = 1;
 		}
-
+		else if (digit == minValue) {
+			count++;
+		}
+		number /= 10;
 	}
 
 
-
-	return 0;
+	//cout << " " << count << " min - " << minValue << endl;
+	return count;
 }
