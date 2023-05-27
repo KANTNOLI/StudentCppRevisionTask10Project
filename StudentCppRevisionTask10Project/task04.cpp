@@ -38,18 +38,42 @@
 *	[output 7]: -1
 */
 
+
 long long task04(int number) {
-	//long long nFirst, nSecond, nThirt;
+	if (number <= 0) {
+		// cout << "Number - " << number << ", n3 - 0" << endl;
+		return -1;
+	}
 
+	unsigned long long n1 = 0, n2 = 1, n3;
 
+	if (number == 1)
+	{
+		// cout << "Number - " << number << ", n3 - 0" << endl;
+		return 0;
+	}
+	else if (number == 2) {
+		// cout << "Number - " << number << ", n3 - 0" << endl;
+		return 1;
+	}
+	else {
+		number -= 2;
+	}
 
+	for (int i = 0; i < number; i++)
+	{
+		if (i == 0)
+		{
+			n3 = n1 + n2;
+		}
+		else {
+			n1 = n2;
+			n2 = n3;
+			n3 = n1 + n2;
+		}
 
-	//while (number > 0) {
+	}
 
-
-	//	number /= 10;
-	//}
-
-
-	return 0;
+	// cout << "Number - " << number + 2 << ", n3 - " << n3 << endl;
+	return n3;
 }
