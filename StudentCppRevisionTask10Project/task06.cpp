@@ -34,12 +34,10 @@
 int task06(long long number) {
 	number = number > 0 ? number : -number;
 	int count = 0;
-
 	short digit2 = number % 10;
 	number /= 10;
 	short digit3 = number % 10;
 	number /= 10;
-	cout << number << endl;;
 	while (number > 0) {
 		short digit1 = digit2;
 		digit2 = digit3;

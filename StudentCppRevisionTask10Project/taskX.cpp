@@ -30,5 +30,24 @@
 */
 
 int taskX(long long number) {
-	return 0;
+	number = number > 0 ? number : -number;
+	short count = 1, save_count = 1;
+	short digit = number % 10;
+	number /= 10;
+
+	while (number > 0) {
+		short new_digit = number % 10;
+		if (digit == new_digit) {
+			count++;
+			save_count = save_count > count ? save_count : count;
+		}
+		else {
+			digit = new_digit; 
+			save_count = save_count > count ? save_count : count; 
+			count = 1; 
+		}
+		number /= 10; 
+	}
+
+	return save_count;
 }
