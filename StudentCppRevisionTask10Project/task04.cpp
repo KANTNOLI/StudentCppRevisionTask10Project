@@ -39,5 +39,17 @@
 */
 
 long long task04(int number) {
+	//long long nFirst, nSecond, nThirt;
+
+
+
+
+	//while (number > 0) {
+
+
+	//	number /= 10;
+	//}
+
+
 	return 0;
 }

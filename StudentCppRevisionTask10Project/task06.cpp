@@ -32,5 +32,23 @@
 */
 
 int task06(long long number) {
-	return 0;
+	number = number > 0 ? number : -number;
+	int count = 0;
+
+	short digit2 = number % 10;
+	number /= 10;
+	short digit3 = number % 10;
+	number /= 10;
+	cout << number << endl;;
+	while (number > 0) {
+		short digit1 = digit2;
+		digit2 = digit3;
+		digit3 = number % 10;
+		if (digit2 > digit1 and digit2 > digit3) {
+			count++;
+		}
+		number /= 10;
+	}
+
+	return count;
 }
