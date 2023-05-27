@@ -46,5 +46,39 @@
 */
 
 int task05(long long number) {
-	return 0;
+	if (number < 0) {
+		return -1;
+	}
+
+	if (number == 0) {
+		return 1;
+	} else if (number == 1) {
+		return 2;
+	}
+
+	bool flag = true;
+	long long n1 = 0, n2 = 1, n3 = 0;
+
+	int count = 2;
+	while (n3 < number) {
+		if (flag)
+		{
+			flag = false;
+			n3 = n1 + n2;
+			count++;
+		}
+		else {
+			n1 = n2;
+			n2 = n3;
+			n3 = n1 + n2;
+			count++;
+		}
+	}
+
+	if (n3 != number)
+	{
+		return -1;
+	}
+
+	return count;
 }
